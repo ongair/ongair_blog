@@ -1,6 +1,6 @@
-# README #
+# Ongair blog theme #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Ghost them for the Ongair blog
 
 ### What is this repository for? ###
 
