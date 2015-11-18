@@ -1,0 +1,41 @@
+<header class="topstrip"></header>
+<header id="pi-header" {{#if @blog.cover}}class="background-image" data-background-image="{{@blog.cover}}"{{/if}}>
+    <div class="header-top">
+        <div class="pi-header-fixed">
+            {{#if @blog.navigation}}
+            <div class="toggle-menu">
+                <span class="item item-1"></span>
+                <span class="item item-2"></span>
+                <span class="item item-3"></span>
+            </div>
+            <nav class="pi-navigation">
+                <ul class="pi-menulist">
+                    {{navigation}}
+                </ul>
+            </nav>
+            {{/if}}
+            <div class="header-right">
+                <div class="social item">
+                    <a href="https://www.facebook.com/letsOngair" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/ongair_" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ongair" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="toggle-search item">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#if @blog.logo}}
+    <div class="header-logo text-center">
+        <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" title={{@blog.title}}></a>
+    </div>
+    {{/if}}
+</header>

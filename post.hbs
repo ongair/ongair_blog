@@ -1,0 +1,101 @@
+{{!< default}}
+
+
+<section class="main-content pi-single">
+    <div class="pi-container">
+        <div class="pi-row">
+            {{#post}}
+        	<div class="pi-content">
+        		<article class="post">
+
+                    <div class="post-media">
+                        <div class="images">
+                                {{#if image}}
+                                    <img src='{{image}}' alt='{{title}}' /> 
+                                {{/if}}
+                        </div>
+                    </div>
+
+                    <div class="post-body">
+
+                        {{^is "page"}}
+                        <div class="post-cat">
+                            {{#if tags}}
+                            <ul>
+                                Tags: {{tags separator=" | "}}
+                            </ul>
+                            {{/if}}
+                        </div>
+                        {{/is}}
+
+                        <div class="post-title text-uppercase">
+                            <h1>{{title}}</h1>
+                        </div>
+                        <!--
+                        {{^is "page"}}
+                        <div class="post-date">
+                            <span>{{date published_at format="MMMM DD, YYYY"}}</span>
+                        </div>
+                        {{/is}}
+                        -->
+                        <div class="post-entry">
+                        	{{content}}
+                        </div>
+
+                        {{^is page}}
+                        <div class="post-foot">
+                            <div class="tb">
+                                <div class="post-meta tb-cell">
+                                    <div class="post-author item">
+                                        <span>The Ongair Team</span>
+                                    </div>
+                                </div>
+
+                                <div class="post-social tb-cell">
+                                    <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url}}&amp;t={{title}}"><i class="fa fa-facebook"></i></a>
+                                    <a target="_blank" href="http://twitthis.com/twit?url={{url}}"><i class="fa fa-twitter"></i></a>
+                                    <a target="_blank" href="http://google.com/bookmarks/mark?op=edit&amp;bkmk={{url}}&amp;title={{title}}"><i class="fa fa-google-plus"></i></a>
+                                    <a target="_blank" href="http://vkontakte.ru/share.php?url={{url}}&amp;title={{title}}"><i class="fa fa-vk"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        {{/is}}
+
+                     </div>
+        		</article>
+        	   
+                {{^is "page"}}
+                {{#author}}
+                <div class="about-author">
+                    {{#if image}}
+                    <div class="image-thumb fl">
+                        <img src="{{image}}" alt="{{image}}">
+                    </div>
+                    {{/if}}
+                    <div class="author-info">
+                        <div class="author-name">
+                            <h4 class="text"><a href="https://ongair.im">{{name}}</a></h4>
+                        </div>
+
+                        <div class="pi-social-square tb-cell">
+                            <h4 class="text-uppercase">Show some love</h4>
+                                    <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url}}&amp;t={{title}}"><i class="fa fa-facebook"></i></a>
+                                    <a target="_blank" href="http://twitthis.com/twit?url={{url}}"><i class="fa fa-twitter"></i></a>
+                                    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{title}}&summary={{excerpt}}&source="><i class="fa fa-linkedin"></i></a>
+                                    
+                        </div>
+                    </div>
+                </div>
+                {{/author}}
+                {{/is}}
+
+                {{^is "page"}}
+                    {{>comments}}
+                {{/is}}
+            </div>
+            {{/post}}
+            {{>sidebar}}
+        </div>
+    </div>
+</section>

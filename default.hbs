@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <link href="{{asset "images/favicon.ico"}}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{asset "images/apple-touch-icon-precomposed.png"}}" rel="apple-touch-icon">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{#if post}}
+    {{#post}}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{excerpt}}">
+    <meta name="twitter:creator" content="{{author.name}}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{excerpt}}">
+    <meta property="og:site_name" content="{{@blog.title}}">
+    {{/post}}
+    {{else}}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="{{@blog.title}}">
+    <meta name="twitter:description" content="{{@blog.description}}">
+    <meta name="twitter:creator" content="{{@blog.title}}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{@blog.title}}">
+    <meta property="og:description" content="{{@blog.description}}">
+    <meta property="og:site_name" content="{{@blog.title}}">
+    <meta property="fb:admins" content="">
+    {{/if}}    
+    <meta name="google-site-verification" content=""> {{! Change for Google Webmaster verification }}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,800' rel='stylesheet' type='text/css'>    
+    <link rel="stylesheet" type="text/css" href="{{asset "css/lib/font-awesome.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/lib/justifiedGallery.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/lib/magnific-popup.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/lib/owl.carousel.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />   
+    {{ghost_head}}
+    <script type="text/javascript"> var piThemeOptions = { global : {   rootUrl : '{{@blog.url}}' } }</script>        
+    {{! Place your Google Analytic here }}
+</head>
+<body class="{{body_class}} {{block "customBodyClass"}}">
+    
+    <div id="wrapper">
+
+        {{>header/header}}
+        
+        <div class="page-social">
+            <div class="tb">
+                <span class="page-social-close">&times;</span>
+                <div class="tb-cell">
+                {{>social-networks}}
+                </div>
+            </div>
+        </div>
+
+        {{>search-form}}
+
+        {{{body}}}
+
+        {{>footer}}
+
+    </div>
+    
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+    <script type="text/javascript" src="{{asset "js/lib/jquery-1.11.2.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/instagram.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/jflickrfeed.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/jquery.owl.carousel.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/jquery.justifiedGallery.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/jquery.magnific-popup.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/retina.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/jquery.ghostHunter.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/jquery.xml2json.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/scripts.js"}}"></script>
+
+</body>
+</html>
