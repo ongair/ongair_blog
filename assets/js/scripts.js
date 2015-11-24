@@ -329,7 +329,7 @@
                 featuredImage = '<div class="item-image"><div class="image-cover"><a href="' + p.link + '"><img src="'+p.content.url+'" alt="'+p.title+'"></div></div>';
             }
             
-
+            console.log("Article " + p.title + " : " + p.pubDate);
             date = new Date(p.pubDate), dateStr, $a;
             dateStr = date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
             $a = $('<div class="item">'+featuredImage+'<div class="item-content"><h3 class="item-title" data-number-line="2"><a href="' + p.link + '">'+p.title+'</a></h3><span class="item-meta">' + dateStr + '</span></div></div></div>');
