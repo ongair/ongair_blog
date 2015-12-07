@@ -407,7 +407,7 @@
             type: 'GET'
         }).success(renderSite);
         renderTags();
-        instagramFeed();
+        // instagramFeed();
     });
 
     $(window).load(function() {
